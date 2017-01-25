@@ -1,18 +1,18 @@
 <h1>Список Статей</h1>
 <%= link_to 'Новая Статья', new_article_path %> 
-<table>
-      <tr>
-      <th>Название</th>
-      <th>Текст</th>
-      </tr>
+  <table>
+    <tr>
+      <th>Название</th>
+      <th>Текст</th>
+    </tr>
  
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Показать', article_path(article) %></td>
-	  <td><%= link_to 'Править', edit_article_path(article) %></td> 
-	  <td><%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы уверенны???' } %></td>  
-	</tr>
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Показать', article_path(article) %></td>
+    <td><%= link_to 'Править', edit_article_path(article) %></td> 
+    <td><%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы уверенны???' } %></td>  
+  </tr>
   <% end %>
 </table>
