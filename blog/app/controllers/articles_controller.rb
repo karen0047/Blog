@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "karen", password: "1234"
   def index
     @articles = Article.all
+    Article.publish
   end
 
   def show

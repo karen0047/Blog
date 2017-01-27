@@ -1,4 +1,5 @@
 <h1>Список Статей</h1>
+
 <%= link_to 'Новая Статья', new_article_path %> 
   <table>
     <tr>
@@ -12,7 +13,8 @@
     <td><%= article.text %></td>
     <td><%= link_to 'Показать', article_path(article) %></td>
     <td><%= link_to 'Править', edit_article_path(article) %></td> 
-    <td><%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы уверенны???' } %></td>  
+    <td><%= link_to 'Удалить', article_path(article), method: :delete, data: { confirm: 'Вы уверенны???' } %></td>
+    <td><%= article.created_at %></td>
   </tr>
   <% end %>
 </table>
