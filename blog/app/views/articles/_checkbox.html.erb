@@ -1,4 +1,4 @@
-<%= form_for :publish, url: articles_path, method: :putch, remote: true do |f| %>
-  Publish: <%= f.check_box :publish %><br />
+<%= form_for @article do |f| %>
+  Publish: <%= f.check_box :published %><br />
   <%= f.submit %>
 <% end %>
