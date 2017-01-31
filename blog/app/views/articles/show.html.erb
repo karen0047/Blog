@@ -7,10 +7,6 @@
     <strong>Текст:</strong>
     <%= @article.text %>
   </p>
-  <p>
-    <%= check_box_tag(:publish) %>
-    <%= label_tag(:publish, "publish") %>
-  </p>
-
+  <%= render 'checkbox' %>
 <%= link_to 'Править', edit_article_path(@article) %>
 <%= link_to 'Назад', articles_path %>
