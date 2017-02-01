@@ -8,5 +8,7 @@
     <%= @article.text %>
   </p>
 
+  <%= render 'checkbox' %>
+
 <%= link_to 'Править', edit_article_path(@article) %>
 <%= link_to 'Назад', articles_path %>
