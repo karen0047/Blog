@@ -9,6 +9,7 @@ class Article < ApplicationRecord
 
   def if_not_published
     if published?
+      validate length: { minimum: 1000}
       throw :abort
     end
   end

@@ -3,7 +3,7 @@
 <% if @article.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@article.errors.count, "error") %> невозможно сохранить эту статью
+      <%= pluralize(@article.errors.count, "ошибка") %> невозможно сохранить эту статью
     </h2>
     <ul>
       <% @article.errors.full_messages.each do |msg| %>

@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     if @article.destroy
       flash[:notice] = "Удалено"
     else
-      flash[:error] = "Ошибка удаления"
+      flash[:error] = @article.errors.full_messages, "Ошибка удаления"
       redirect_to root_path
     end
   end
@@ -48,4 +48,4 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :text, :published)
     end
-  end
+end
