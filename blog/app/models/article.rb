@@ -5,10 +5,10 @@ class Article < ApplicationRecord
   
   scope :published, -> { where(published: true) }
  
-  before_destroy :if_not_published, (validates :text, presence: true, length: { minimum: 1000 })
+  before_destroy :if_not_published
   def if_not_published
     if published?
-      validate :text
+      errors.add(:base, 'статья опубликована')
       throw :abort
     end
   end
