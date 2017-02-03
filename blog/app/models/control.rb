@@ -7,7 +7,7 @@ class Control < ApplicationRecord
     if @article.destroy
       errors.add(:destroy, "Невозможно удалить")
       return false
-      redirect_to @article
+      redirect_to root_path
     end
   end
 
