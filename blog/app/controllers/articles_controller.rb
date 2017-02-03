@@ -36,8 +36,12 @@ class ArticlesController < ApplicationController
   
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
-    redirect_to root_path
+    if @article.destroy
+      flash[:notice] = "Удалено"
+    else
+      flash[:error] = "Ошибка удаления"
+      redirect_to root_path
+    end
   end
   
   private

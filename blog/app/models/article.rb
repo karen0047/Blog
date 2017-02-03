@@ -9,10 +9,7 @@ class Article < ApplicationRecord
 
   def if_not_published
     if published?
-      errors.add :base, "Невозможно удалить опубликованную статью"
-      return false
+      throw :abort
     end
   end
-
-
 end

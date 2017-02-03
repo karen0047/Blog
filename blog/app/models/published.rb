@@ -1,3 +1,0 @@
-class Published < ApplicationRecord
-
-end
