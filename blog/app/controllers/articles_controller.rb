@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     if @article.destroy
       flash[:notice] = "Удалено"
     else
-      flash[:error] = @article.errors.full_messages, "Ошибка удаления: #{@article.errors.full_messages.to_sentence}"
+      flash[:error] = "Ошибка удаления: #{@article.errors.full_messages.to_sentence}"
       redirect_to root_path
     end
   end
